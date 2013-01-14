@@ -18,6 +18,7 @@ public class Memoria implements Componente {
 		this.indice=indice;
 		this.dadosIn=dadosIn;
 		this.endereco=endereco;
+		this.dadosOut=new LinhaDados();
 	}
 	public void preSet(int end, String dado)
 	{
@@ -30,7 +31,7 @@ public class Memoria implements Componente {
 		if (estado[indice]=='1')
 		{
 			//leitura
-			dadosOut = banco[posicao];
+			dadosOut.valor = banco[posicao].valor.clone();
 		}
 		else
 		{

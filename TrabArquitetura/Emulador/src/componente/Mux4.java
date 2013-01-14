@@ -9,25 +9,26 @@ public class Mux4 implements Componente {
 		this.entrada2 = entrada3;
 		this.entrada3 = entrada4;
 		this.indice = indice;
+		saida= new LinhaDados();
 	}
 	@Override
 	public void trocaEstado(char[] estado) {
 		String cmd= String.copyValueOf(estado, indice, 2);
-		if ("cmd".equals("00"))
+		if (cmd.equals("00"))
 		{
-			saida=entrada0;
+			saida.valor=entrada0.valor.clone();
 		}
-		if ("cmd".equals("01"))
+		if (cmd.equals("01"))
 		{
-			saida=entrada1;
+			saida.valor=entrada1.valor.clone();
 		}
-		if ("cmd".equals("10"))
+		if (cmd.equals("10"))
 		{
-			saida=entrada2;
+			saida.valor=entrada2.valor.clone();
 		}
-		if ("cmd".equals("11"))
+		if (cmd.equals("11"))
 		{
-			saida=entrada3;
+			saida.valor=entrada3.valor.clone();
 		}
 	}
 	@Override
