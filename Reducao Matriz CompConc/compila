@@ -1,0 +1,5 @@
+gcc -c funcoesEstrutura.c
+gcc -c entradaDados.c
+gcc -c medicao.c
+gcc -c mainConc.c 
+gcc funcoesEstrutura.o entradaDados.o medicao.o mainConc.o redutor.c -o redutor -lpthread
